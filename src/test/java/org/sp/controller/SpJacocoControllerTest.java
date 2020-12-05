@@ -1,25 +1,29 @@
 package org.sp.controller;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-import  org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
 
-@RunWith(MockitoJUnitRunner.class)
 public class SpJacocoControllerTest {
 
 	@InjectMocks
 	SpJaCoCoAppController controller;
+	
+	@Before
+	public void init() {
+		MockitoAnnotations.initMocks(this);
+	}
 	
 	@Test
 	public void firstHandlerTest() throws Exception {
 		ResponseEntity<?> response = controller.firstController();
 		assertEquals(200, response.getStatusCodeValue());
 		assertNotNull(response.getBody());
-		assertEquals("It is a one controller!!", response.getBody());
+		assertEquals("It is a first controller!!", response.getBody());
 	}
 	
 	@Test
@@ -27,7 +31,7 @@ public class SpJacocoControllerTest {
 		ResponseEntity<?> response = controller.secondController();
 		assertEquals(200, response.getStatusCodeValue());
 		assertNotNull(response.getBody());
-		assertEquals("It is a two controller!!", response.getBody());
+		assertEquals("It is a second controller!!", response.getBody());
 	}
 	
 }
