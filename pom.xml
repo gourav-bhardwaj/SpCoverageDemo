@@ -71,6 +71,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.20.1</version>
 			</plugin>
+			
+			<!-- To generate the jacoco report -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -86,6 +88,21 @@
 						<phase>prepare-package</phase>
 						<goals>
 							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<!-- To generate the sonar report -->
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.3.0.603</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>sonar</goal>
 						</goals>
 					</execution>
 				</executions>
