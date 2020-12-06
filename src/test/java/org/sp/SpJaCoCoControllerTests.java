@@ -17,7 +17,7 @@ public class SpJaCoCoControllerTests {
 	SpJaCoCoAppController controller;
 	
 	@Test
-	public void firstHandlerTest() throws Exception {
+	public void firstHandlerTEST() throws Exception {
 		ResponseEntity<?> response = controller.firstController();
 		assertEquals(200, response.getStatusCodeValue());
 		assertNotNull(response.getBody());
