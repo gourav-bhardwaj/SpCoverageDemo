@@ -18,7 +18,7 @@ public class SpJaCoCoControllerTests {
 	
 	@Test
 	public void firstHandlerTEST() throws Exception {
-		ResponseEntity<?> response = controller.firstController();
+		ResponseEntity<?> response = controller.firstController("gk97723747@gmail.com");
 		assertEquals(200, response.getStatusCodeValue());
 		assertNotNull(response.getBody());
 		assertEquals("It is a first controller!!", response.getBody());
